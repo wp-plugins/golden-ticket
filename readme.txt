@@ -24,7 +24,7 @@ Usage is simple, just insert the shortcode [goldenticket] in your content where 
 
 [Golden Ticket Demo Link](http://thepluginfactory.co/distribution/submitting-a-plugin-to-the-wordpress-org-plugin-directory/) - At the top of this page is a hidden Golden Ticket. Either move your mouse around near the top of the first paragraph, or simply wait 10 seconds to see it appear.  
  
-http://youtu.be/OTl6Gedz9Pg
+http://www.youtube.com/watch?v=OTl6Gedz9Pg
 
 = Usage =
 
