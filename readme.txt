@@ -1,10 +1,10 @@
-=== Golden Ticket ===
+﻿=== Golden Ticket ===
 Contributors: The Plugin Factory
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WRZVAL4GPQVV4
 Tags: Promotion, Coupon, Rewards, SEO, Giveaways
 Requires at least: 3.0
 Tested up to: 3.6.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPL2 or later
 
 Easily provide incentives for user interactions.
@@ -24,7 +24,7 @@ Usage is simple, just insert the shortcode [goldenticket] in your content where 
 
 [Golden Ticket Demo Link](http://thepluginfactory.co/distribution/submitting-a-plugin-to-the-wordpress-org-plugin-directory/) - At the top of this page is a hidden Golden Ticket. Either move your mouse around near the top of the first paragraph, or simply wait 10 seconds to see it appear.  
  
-http://www.youtube.com/watch?v=OTl6Gedz9Pg
+http://youtu.be/OTl6Gedz9Pg
 
 = Usage =
 
@@ -80,10 +80,16 @@ Can I remove the "Powered by Golden Ticket" link below the tickets?
 
 == Upgrade Notice ==
 
+= 1.0.1 =
+Tweak for the Odds add-on
+
 = 1.0 =
 Initial release. 
 
 == Changelog ==
+
+= 1.0.1 =
+Tweak for the Odds add-on
 
 = 1.0 =
 * Initial release.

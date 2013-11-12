@@ -13,9 +13,16 @@
 	$golden_tickets["1"] = get_option( $ticket_slug["1"] );
 			
 
-// RUN FUNCTIONS FOR ADD-ONS		
-	if ($addon['odds'] === TRUE) GOLDEN_TICKET_ODDS_ADMIN_SETUP();
-	if ($addon['multiple_tickets'] === TRUE) $golden_tickets = GOLDEN_TICKET_MULTIPLE_TICKETS_ADMIN_TICKETS_OUTPUT();
+// RUN ADMIN SETUP FUNCTIONS FOR ADD-ONS		
+
+	foreach ($addon as $key => $value) {
+		if ( $value === TRUE )  {
+			$upper = strtoupper($key);
+			$function = "GOLDEN_TICKET_".$upper."_ADMIN_SETUP";
+			if ($addon["$value"] === TRUE && function_exists($function_exists)) 
+				$function();		
+		}
+	}
 
 // DEFINE FUNCTIONS
 	if (!function_exists('get_golden_ticket_src')) {

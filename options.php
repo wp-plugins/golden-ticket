@@ -96,9 +96,55 @@
 						<tbody>
 							<tr>
 								<td>
-									<a href="http://thepluginfactory.co/" target="_blank" title="The Plugin Factory">
-										<img src="<?php echo plugins_url( '/images/ThePluginFactoryLogo.png', __FILE__ ) ?>" style="width:100%;max-width:420px;" />
-									</a>
+									<a href="http://thepluginfactory.co/" target="_blank" title="The Plugin Factory"><img src="<?php echo plugins_url( '/images/ThePluginFactoryLogo.png', __FILE__ ) ?>" style="width:100%;max-width:420px;" /></a>
+									<?php 
+
+
+									$show_discount = TRUE;
+									foreach ($addon as $key => $value) {
+										if ( $value === TRUE )  {
+											$show_discount = FALSE;			
+										}
+									}
+
+									if ($show_discount) {
+
+										date_default_timezone_set('America/Los_Angeles');
+
+										$now = time();
+										$threeweeks = '1814400';
+										$twoweeks = '1209600';
+										$one_day = '86400';
+
+										$blackfriday_date = '1385712000'; 
+										$christmas_date = '1387958400';
+
+										$blackfriday_start = $blackfriday_date - $threeweeks;
+										$blackfriday_stop = $blackfriday_date + ($one_day * 4);									
+
+										$christmas_start = $christmas_date - $twoweeks;
+										$christmas_stop = $christmas_date + 84600;
+
+										if ($now >= $blackfriday_start && $now <= $blackfriday_stop) {
+											?>
+											<h3 style="color:red;margin:0;">BLACK FRIDAY / CYBER MONDAY SALE</h3>
+												Use discount code <b><pre style="font-size:14px;display:initial;color:black;">GTBF2013</pre></b> anytime between Black Friday and<br>
+												Cyber Monday to receive 50% off of any Golden Ticket add-on purchases.<br>
+												Valid dates: November 29, 2013 through December 2, 2013
+												<br>
+											<?
+										} elseif ($now >= $christmas_start && $now <= $christmas_stop) {
+											?>
+											<h3 style="color:green;margin:0;">CHRISTMAS EVE / CHRISTMAS DAY</h3>
+												Use discount code <b><pre style="font-size:14px;display:initial;color:black;">GTCH2013</pre></b> on Christmas Eve or<br>
+												Christmas Day to receive 50% off of any Golden Ticket add-on purchases.<br>
+												Valid dates: December 24, 2013 and December 25, 2013
+												<br>
+											<?
+										}
+									}
+
+									?>
 									<br>
 									Plugin by: <a href="http://thepluginfactory.co/" target="_blank" title="The Plugin Factory">The Plugin Factory</a><br>
 									Support Forum: <a href="http://thepluginfactory.co/community/forum/plugin-specific/golden-ticket/" target="_blank" title="Golden Ticket Support">Golden Ticket Support</a><br>
@@ -369,6 +415,14 @@
 
 			";		
 		}
+
+
+		// TOOLTIPS ADD ON
+
+			if (function_exists("GOLDEN_TICKET_TOOLTIPS_ADMIN_JS"))
+				$custom_js .= GOLDEN_TICKET_TOOLTIPS_ADMIN_JS();
+
+
 		
 		$custom_js .= "
 				// END FUNCTIONS HERE

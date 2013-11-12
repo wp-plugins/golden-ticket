@@ -3,7 +3,7 @@
     Plugin Name: Golden Ticket
     Plugin URI: http://thepluginfactory.co/warehouse/golden-ticket
 	Description: Display fun tickets and reward your visitors for reading your content.
-	Version: 1.0
+	Version: 1.0.1
 	Author: The Plugin Factory
 	Author URI: http://thepluginfactory.co
 */
@@ -28,7 +28,7 @@ if (!class_exists('GOLDEN_TICKET')) {
 
 			# EDIT THIS
 				$vars["UPPERCASE_SLUG"] =  'GOLDEN_TICKET'; // PLUGIN NAME
-				$vars["VERSION"] = '1.0';
+				$vars["VERSION"] = '1.0.1';
 
 			# THESE NEVER CHANGE
 				$vars["AUTHOR"] = 'The Plugin Factory';
@@ -109,6 +109,7 @@ if (!class_exists('GOLDEN_TICKET')) {
 					'odds' => '0'
 				), $atts ) );
 
+
 				global $vars;
 				$slug = $vars["UPPERCASE_SLUG"].'-ticket_url_1';
 				$ticket_src = get_option( $slug );
@@ -116,13 +117,20 @@ if (!class_exists('GOLDEN_TICKET')) {
 				// ODDS ADD ON
 					
 					if (function_exists('GOLDEN_TICKET_ODDS_FRONTEND')) {
-						if( GOLDEN_TICKET_ODDS_FRONTEND($odds) != "1" ) return;
+						$theodds = GOLDEN_TICKET_ODDS_FRONTEND($odds,$ticket);
+						if( $theodds != "1" ) return $theodds;
 					}
 
 				// MULTIPLE TICKETS ADD ON
 					
 					if (function_exists('GOLDEN_TICKET_MULTIPLE_TICKETS_FRONTEND'))
 						$ticket_src = GOLDEN_TICKET_MULTIPLE_TICKETS_FRONTEND($ticket);
+
+				// TOOLTIPS ADD ON
+					
+					$tooltip = '';
+					if (function_exists('GOLDEN_TICKET_TOOLTIPS_FRONTEND'))
+						$tooltip = GOLDEN_TICKET_TOOLTIPS_FRONTEND($ticket);
 
 				$display_mode_visible = get_option( $vars["UPPERCASE_SLUG"].'-display_mode_visible', 0 );
 				$display_mode_delay = get_option( $vars["UPPERCASE_SLUG"].'-display_mode_delay', 0 );
@@ -154,9 +162,11 @@ if (!class_exists('GOLDEN_TICKET')) {
 				
 
 				$goldenticket = $opendiv."<div id='goldenticket' style='display:none'>
-											{$ticket_output}
-											<br>
-											$message
+											<span title='{$tooltip}'>
+												{$ticket_output}
+												<br>
+												$message
+											</span>
 										</div>";
 				return $goldenticket;
 
@@ -248,6 +258,7 @@ if (!class_exists('GOLDEN_TICKET')) {
 						"multiple_tickets" => "Upload multiple tickets $addonlink",
 						"auto_insert" => "Auto insert tickets $addonlink",
 						"links" => "Make tickets clickable $addonlink",
+						"tooltips" => "Show a <a href='http://jqueryui.com/tooltip' target='_blank'>tooltip</a> on ticket hover $addonlink",
 						// "split_testing" => "Test which tickets convert better $addonlink",
 						// "scheduler" => "Schedule start and end dates $addonlink",
 						// "click_tracking" => "Track clicks on tickets $addonlink",
