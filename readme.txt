@@ -1,10 +1,10 @@
-﻿=== Golden Ticket ===
+=== Golden Ticket ===
 Contributors: The Plugin Factory
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WRZVAL4GPQVV4
 Tags: Promotion, Coupon, Rewards, SEO, Giveaways
 Requires at least: 3.0
 Tested up to: 3.6.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPL2 or later
 
 Easily provide incentives for user interactions.
@@ -79,6 +79,9 @@ Can I remove the "Powered by Golden Ticket" link below the tickets?
 
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Removed PHP short tags
 
 = 1.0.1 =
 Tweak for the Odds add-on

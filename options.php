@@ -7,6 +7,8 @@
 	<?php // screen_icon('plugins'); ?>
 
 	<div style="float: left;height: 64px;margin: 7px 8px 0 0;width: 64px;"><img src="<?php echo plugins_url( '/images/ticket-icon.png', __FILE__ ) ?>" title="Golden Ticket WordPress Plugin" /></div>
+
+	<a href='http://consultingwp.com?so=gard_pro' target="_blank"><span style='background-color:yellow;  padding: 5px 15px;margin-top: 10px;display: inline-block;border: 1px solid yellowgreen;color:black;font-weight:bold'>Need a WordPress coder?</span></a> <a href='http://consultingwp.com?so=gard_pro' target="_blank">Contact <span style="color:#d54e21">Consulting WP</span> about custom wordpress projects or error fixes.</a><br>
 	
 	<form method="post" action="options.php" id="<?php echo $vars['OPTIONS_ID']; ?>_options_form" name="<?php echo $vars['OPTIONS_ID']; ?>_options_form">
 	
@@ -132,7 +134,7 @@
 												Cyber Monday to receive 50% off of any Golden Ticket add-on purchases.<br>
 												Valid dates: November 29, 2013 through December 2, 2013
 												<br>
-											<?
+											<?php 
 										} elseif ($now >= $christmas_start && $now <= $christmas_stop) {
 											?>
 											<h3 style="color:green;margin:0;">CHRISTMAS EVE / CHRISTMAS DAY</h3>
@@ -140,7 +142,7 @@
 												Christmas Day to receive 50% off of any Golden Ticket add-on purchases.<br>
 												Valid dates: December 24, 2013 and December 25, 2013
 												<br>
-											<?
+											<?php 
 										}
 									}
 
@@ -167,7 +169,7 @@
 										<?php if ($addon['multiple_tickets'] === TRUE) { echo GOLDEN_TICKET_MULTIPLE_TICKETS_PREVIEW(); } ?>
 										<br>
 										<img id="preview_image" src="<?php echo get_golden_ticket_src( $golden_tickets['1'], "medium" ); ?>" />
-									<? } ?>
+									<?php } ?>
 								</td>
 							</tr>
 						</tbody>

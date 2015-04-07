@@ -3,7 +3,7 @@
     Plugin Name: Golden Ticket
     Plugin URI: http://thepluginfactory.co/warehouse/golden-ticket
 	Description: Display fun tickets and reward your visitors for reading your content.
-	Version: 1.0.1
+	Version: 1.0.2
 	Author: The Plugin Factory
 	Author URI: http://thepluginfactory.co
 */
@@ -28,7 +28,7 @@ if (!class_exists('GOLDEN_TICKET')) {
 
 			# EDIT THIS
 				$vars["UPPERCASE_SLUG"] =  'GOLDEN_TICKET'; // PLUGIN NAME
-				$vars["VERSION"] = '1.0.1';
+				$vars["VERSION"] = '1.0.2';
 
 			# THESE NEVER CHANGE
 				$vars["AUTHOR"] = 'The Plugin Factory';
