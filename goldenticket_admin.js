@@ -33,7 +33,7 @@ jQuery(function ($) {
 				if (formfield) {
 					fileurl = $('img',html).attr('src');
 					$(formfield).val(fileurl);
-					alert(fileurl);
+					// alert(fileurl);
 					tb_remove();
 				} else {
 					window.original_send_to_editor(html);

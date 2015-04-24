@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: Promotion, Coupon, Rewards, SEO, Giveaways
 Requires at least: 3.0
 Tested up to: 3.6.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPL2 or later
 
 Easily provide incentives for user interactions.
