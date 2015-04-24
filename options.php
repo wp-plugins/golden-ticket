@@ -8,8 +8,6 @@
 
 	<div style="float: left;height: 64px;margin: 7px 8px 0 0;width: 64px;"><img src="<?php echo plugins_url( '/images/ticket-icon.png', __FILE__ ) ?>" title="Golden Ticket WordPress Plugin" /></div>
 
-	<a href='http://consultingwp.com?so=gard_pro' target="_blank"><span style='background-color:yellow;  padding: 5px 15px;margin-top: 10px;display: inline-block;border: 1px solid yellowgreen;color:black;font-weight:bold'>Need a WordPress coder?</span></a> <a href='http://consultingwp.com?so=gard_pro' target="_blank">Contact <span style="color:#d54e21">Consulting WP</span> about custom wordpress projects or error fixes.</a><br>
-	
 	<form method="post" action="options.php" id="<?php echo $vars['OPTIONS_ID']; ?>_options_form" name="<?php echo $vars['OPTIONS_ID']; ?>_options_form">
 	
 	<?php settings_fields($vars['OPTIONS_ID']); ?>
@@ -18,6 +16,8 @@
 
 	<h1 style="padding-top: 30px;"><?php echo $vars['PLUGIN_TITLE'] ?> v<?php echo $vars['VERSION']; ?> &raquo; Settings</h1>
 
+	<a href='http://consultingwp.com?so=golden_ticket' target="_blank"><span style='background-color:yellow;  padding: 5px 15px;margin-top: 10px;display: inline-block;border: 1px solid yellowgreen;color:black;font-weight:bold'>Need a WordPress coder?</span></a> <a href='http://consultingwp.com?so=golden_ticket' target="_blank">Contact <span style="color:#d54e21">Consulting WP</span> about custom wordpress projects or error fixes.</a><br>
+		
 		<table class="form-table" style="width:initial;margin-bottom: 20px;">
 			<tr style="vertical-align:top;">
 				<td style="width: 445px;">
